@@ -16,6 +16,7 @@ public void bookpage_001() throws InterruptedException {
 	scrollWindowBy(driver, 0,200);
 	Thread.sleep(2000);
 	MouseCursor(null);
+	getWebpageScreenShot(driver);
 }
 	
 	

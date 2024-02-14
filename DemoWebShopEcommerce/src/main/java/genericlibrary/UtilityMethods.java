@@ -14,25 +14,51 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 
+/**
+ * @author INBARAJA V
+ */
 public class UtilityMethods {
 	static Actions action;
 	static Select selectoption;
 	static JavascriptExecutor jse;
+	/**
+	 * This method is used for select the dropdown by using index 
+	 * @param dropdown
+	 * @param index
+	 */
 	public static void selectoptionByIndex(WebElement dropdown , int index) {
      
 	 selectoption = new Select(dropdown);
      selectoption.selectByIndex(index);
      }
+	/**
+	 * This method is used for select the dropdown attribute value
+	 * @param dropdown
+	 * @param value
+	 */
+	
 	public static void selectoptionByValue(WebElement dropdown , String value) {
 		
 		selectoption = new Select(dropdown);
 		selectoption.selectByValue(value);
+				
 }
+	/**
+	 * This method is used for select the dropdown by using visible text
+	 * @param dropdown
+	 * @param text
+	 */
 	public static void selectoptionByVisibletext(WebElement dropdown,String text) {
 		
 		selectoption = new Select(dropdown);
 		selectoption.selectByVisibleText(text);
 	}
+	
+	/**
+	 * This method is used for to get the screen shot of webpage
+	 * @param driver
+	 * @return path of the img
+	 */
 	
 	public static String getWebpageScreenShot(WebDriver driver)  {
 		//Step1
@@ -54,7 +80,11 @@ public class UtilityMethods {
 		}
 		return "."+img;
 	}
-	
+	/**
+	 * This method is used for to get the screen shot of webElemet
+	 * @param element
+	 * @return path of the img
+	 */
 	public static String getWebElementScreenShot(WebElement element) {
 		String img = FrameworkConstants.SCREENSHOT_Path+getSystemDateAndTime()+".jpg";
 		File temp2 = element.getScreenshotAs(OutputType.FILE);
@@ -70,10 +100,20 @@ public class UtilityMethods {
 		return "."+img;
 		
 	}
+	/**
+	 * This method is used to get Time and Date
+	 * @return
+	 */
 	public static String getSystemDateAndTime() {
 		// TODO Auto-generated method stub
 		return LocalDateTime.now().toString().replace(":", "_").replace("-", "_");
 	}
+	
+	/**
+	 * This method is used to Switch Window By Using Page Title
+	 * @param driver
+	 * @param Title
+	 */
 	public static void switchToWindowByTitle(WebDriver driver, String Title) {
 		Set<String> allWindows = driver.getWindowHandles();
 		
@@ -87,6 +127,11 @@ public class UtilityMethods {
 		}
 		
 	}
+	/**
+	 * 
+	 * @param driver
+	 * @param url
+	 */
 	public static void switchToWindowByURL(WebDriver driver,String url) {
 		Set<String> allwindows = driver.getWindowHandles();
 		

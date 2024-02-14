@@ -2,7 +2,6 @@ package testScripts;
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
 public class ComputerTest {
 
 	@Test
@@ -13,6 +12,7 @@ public class ComputerTest {
 		System.out.println("I love you all too");
 
 		Reporter.log("I love you sir",true);
+		Reporter.log("Thanku sir",true);
 	}
 	
 }
